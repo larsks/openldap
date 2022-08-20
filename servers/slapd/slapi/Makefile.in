@@ -37,6 +37,7 @@ LDAP_LIBDIR= ../../../libraries
 XLIBS = $(LIBRARY)
 XXLIBS = 
 NT_LINK_LIBS = $(AC_LIBS)
+UNIX_LINK_LIBS = ../../../libraries/libldap/libldap.la $(LTHREAD_LIBS)
 
 XINCPATH = -I$(srcdir)/.. -I$(srcdir)
 XDEFS = $(MODULES_CPPFLAGS)
