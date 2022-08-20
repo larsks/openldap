@@ -218,7 +218,7 @@ fi
 # wait for it to settle
 echo "Waiting until connections are established..."
 for i in 0 1 2 3 4 5; do
-    $LDAPCOMPARE "cn=Load Balancer,cn=Backends,cn=monitor" -H $URI6 \
+    $LDAPCOMPARE -H $URI6 "cn=Load Balancer,cn=Backends,cn=monitor" \
         'olmOutgoingConnections:4' > /dev/null 2>&1
     RC=$?
     if test $RC = 6 ; then
@@ -269,7 +269,7 @@ fi
 # wait for it to settle
 echo "Waiting until connections are established..."
 for i in 0 1 2 3 4 5; do
-    $LDAPCOMPARE "cn=Load Balancer,cn=Backends,cn=monitor" -H $URI6 \
+    $LDAPCOMPARE -H $URI6 "cn=Load Balancer,cn=Backends,cn=monitor" \
         'olmOutgoingConnections:13' > /dev/null 2>&1
     RC=$?
     if test $RC = 6 ; then
@@ -306,7 +306,7 @@ fi
 # wait for it to settle
 echo "Waiting until global counters are updated..."
 for i in 0 1 2 3 4 5; do
-    $LDAPCOMPARE "cn=Other,cn=Operations,cn=Load Balancer,cn=Backends,cn=monitor" -H $URI6 \
+    $LDAPCOMPARE -H $URI6 "cn=Other,cn=Operations,cn=Load Balancer,cn=Backends,cn=monitor" \
         'olmCompletedOps:2' > /dev/null 2>&1
     RC=$?
     if test $RC = 6 ; then
