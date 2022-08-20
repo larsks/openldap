@@ -1414,8 +1414,8 @@ tool_bind( LDAP *ld )
 	msgbuf[0] = 0;
 
 #ifdef LDAP_CONTROL_PASSWORDPOLICYREQUEST
+	LDAPControl c;
 	if ( ppolicy ) {
-		LDAPControl c;
 		c.ldctl_oid = LDAP_CONTROL_PASSWORDPOLICYREQUEST;
 		c.ldctl_value.bv_val = NULL;
 		c.ldctl_value.bv_len = 0;
